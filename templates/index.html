@@ -20,9 +20,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body style="background-color:powderblue; ">
     <div class="login">
-        <h1>Ten(10) Minutes Interval Solar Electrical Energy Forecasting</h1>
+    <h1 style="text-align: left;">Ten(5) Minutes Interval Solar Electric Energy Forecasting</h1>
+    <a href="mainwindow.html" style="color: black; font-size: larger; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"></a>
+    <br>
+    <br>
     
          <!-- Main Input For Receiving Query to our ML -->
         <form action="{{ url_for('predict')}}"method="post">
@@ -33,7 +36,7 @@
             <input type="text" name="number_of_solar_panels" placeholder="number of solar panels" required="required" />
             <input type="text" name="area_of_panel" placeholder="area of one panel" required="required" />
     
-            <button type="submit" class="btn btn-primary btn-block btn-large">Predict Solar Electric Energy</button>
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict Solar Power</button>
         </form>
     
        <br>

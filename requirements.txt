@@ -1,0 +1,6 @@
+flask
+numpy
+pandas
+tensorflow-cpu
+gunicorn
+flask_cors

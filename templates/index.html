@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Power Forecasting</title>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="solar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source Code Pro">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login">
+        <h1>Ten(10) Minutes Interval Solar Electrical Energy Forecasting</h1>
+    
+         <!-- Main Input For Receiving Query to our ML -->
+        <form action="{{ url_for('predict')}}"method="post">
+            <input type="text" name="first_interval" placeholder="1st Interval" required="required" />
+            <input type="text" name="second_interval" placeholder="2nd Interval" required="required" />
+            <input type="text" name="third_interval" placeholder="3rd Interval" required="required" />
+            <input type="text" name="capacity_of_one_panel" placeholder="capacity of one panel" required="required" />
+            <input type="text" name="number_of_solar_panels" placeholder="number of solar panels" required="required" />
+            <input type="text" name="area_of_panel" placeholder="area of one panel" required="required" />
+    
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict Solar Electric Energy</button>
+        </form>
+    
+       <br>
+       <br>
+       {{ prediction_text }}
+    
+     </div>    
+   
+</body>
+</html>

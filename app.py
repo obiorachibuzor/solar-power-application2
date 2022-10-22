@@ -54,7 +54,7 @@ def predict():
 
     output = predictions.tolist()
 
-    return render_template('index.html', prediction_text='Predicted Power: Watts-hour {}'.format(output))
+    return render_template('index.html', prediction_text='Predicted Power: kWatts-hour {}'.format(output))
 
 
     

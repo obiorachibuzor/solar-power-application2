@@ -19,31 +19,105 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    
 </head>
-<body style="background-color:powderblue; ">
-    <div class="login">
-    <h1 style="text-align: left;">Ten(10) Minutes Interval Solar Electric Energy Forecasting</h1>
-    <a href="mainwindow.html" style="color: black; font-size: larger; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"></a>
+
+<body style="background-color:powderblue; border: 0.1em solid;
+color: rgb(2, 5, 4);
+border-radius: 1em;
+padding: 1em;
+margin: 1em;
+display : -webkit-inline-flex;" @media screen (min-width: 768px) {
+    background-image: conic-gradient(red, yellow, blue)
+    
+}>
+<div class="container">
+    <h1 style="text-align: center; ">Ten(10) Minutes Interval Solar Power Forecasting</h1>
     <br>
-    <br>
+    <div class="container" style="border: 0.1em solid;
+    color: rgb(3, 4, 3);
+    border-radius: 1em;
+    padding: 1em;
+    margin: 1em;
+    display: inline-flexbox;">
+        <h2 style="font-size: 1.5em;">Steps to Follow to Use this App:</h2>
+        <h3 style="font-size: 1em; font-style: italic; font-weight: 400;">1. Enter the current actual solar radiation value on your GHI sensor</h3><p></p>
+        <h4 style="font-size: 1em; font-style: italic; font-weight: 400;">2. After 10 minutes enter the value for the 2nd interval from your sensor</h4><p></p>
+        <h5 style="font-size: 1em; font-style: italic; font-weight: 400;">3. After another 10 minutes enter the value for the 3rd interval from your sensor</h5><p></p>
+        <h6 style="font-size: 1em; font-style: italic; font-weight: 400;">4. Enter the capacity of one solar panel installed</h6><p></p>
+        <h7 style="font-size: 1em; font-style: italic; font-weight: 400;">5. Enter the number of solar panels installed</h7><p></p>
+        <h8 style="font-size: 1em; font-style: italic; font-weight: 400;">6. Enter the area of one solar panel installed</h8><p></p>
+        <h9 style="font-size: 1em; font-style: italic; font-weight: 400;">7. Click on the button to predict solar power at ten minutes inteval</h9>
+        
+    </div>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post" style="border: 0.1em solid;
+    color: rgb(2, 5, 4);
+    border-radius: 1em;
+    padding: 1em;
+    margin: 1em;
+    display : inline-flexbox;">
+        <input type="text" name="first_interval" placeholder="1st Interval" required="required" /><p></p>
+        <input type="text" name="second_interval" placeholder="2nd Interval" required="required" /><p></p>
+        <input type="text" name="third_interval" placeholder="3rd Interval" required="required" /><p></p>
+        <input type="text" name="capacity_of_one_panel" placeholder="capacity of one panel" required="required" /><p></p>
+        <input type="text" name="number_of_solar_panels" placeholder="number of solar panels" required="required" /><p></p>
+        <input type="text" name="area_of_panel" placeholder="area of one panel" required="required" /><p></p>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict Solar Power</button>
+    </form>
+    {{ prediction_text }}
+</div>
+
+<br>
     
-         <!-- Main Input For Receiving Query to our ML -->
-        <form action="{{ url_for('predict')}}"method="post">
-            <input type="text" name="first_interval" placeholder="1st Interval" required="required" />
-            <input type="text" name="second_interval" placeholder="2nd Interval" required="required" />
-            <input type="text" name="third_interval" placeholder="3rd Interval" required="required" />
-            <input type="text" name="capacity_of_one_panel" placeholder="capacity of one panel" required="required" />
-            <input type="text" name="number_of_solar_panels" placeholder="number of solar panels" required="required" />
-            <input type="text" name="area_of_panel" placeholder="area of one panel" required="required" />
+<div class="container" >
+ <div class="solar">
+
+    <div class="solar1" style="border: 0.1em solid;
+    color: rgb(3, 4, 3);
+    border-radius: 1em;
+    padding: 1em;
+    margin: 1em;
+    display : flex">
+        <h3 style="font-size: 1.5em; font-style: italic;">Roofing with Solar Panels at the University of Johannesburg parking Lot</h3>
+        <img src="Solar Panels at UJ Parking space.jpg" width="700", height="280">
+        </div>
+       
+
+    <div class="solar2" style="border: 0.1em solid;
+    color: rgb(4, 5, 4);
+    border-radius: 1em;
+    padding: 1em;
+    margin: 1em;
+    display : flex" >
+         <h3 style="font-size: 1.5em; font-style: italic;">Smartflower Solar Panels</h3>
+        <img src="smartflower-solar-power.png" width="700", height="280">
+        </div>
+
+    <div class="solar3" style="border: 0.1em solid;
+    color: rgb(9, 12, 11);
+    border-radius: 1em;
+    padding: 1em;
+    margin: 1em;
+    display : flex">
+         <h3 style="font-size: 1.5em; font-style: italic;">Solar Farm</h3>
+         <img src="energy-concepts-solar.jpg" width="700", height="280">
+        </div>
+
+ </div>  
+     
+    </div>
     
-            <button type="submit" class="btn btn-primary btn-block btn-large">Predict Solar Power</button>
-        </form>
-    
-       <br>
-       <br>
-       {{ prediction_text }}
-    
-     </div>    
-   
+     
+
 </body>
 </html>
+
+
+
+
+
+
+
+
